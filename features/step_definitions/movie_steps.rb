@@ -15,6 +15,21 @@ Then /the director of "(.*)" should be "(.*)"/ do |title, director|
   movie['director'].should == director
 end
 
+Then /I should be on the Similar Movies page for "(.*)"/ do |title|
+  movie = Movie.find_by_title(title)
+  #current_path = URI.parse(current_url).path
+  current_url.should == director_url(movie.director)
+end
+
+  
+  
+
+
+
+
+
+
+
 # features/step_definitions/some_definitions.rb
 # convenience so you can call debugger from features file.
 Then /^I debug$/ do

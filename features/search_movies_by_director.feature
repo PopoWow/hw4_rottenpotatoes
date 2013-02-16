@@ -28,6 +28,7 @@ Scenario: find movie with same director
  
 Scenario: can't find similar movies if we don't know director (sad path)
   Given I am on the details page for "Alien"
+  When I debug
   Then  I should not see "Ridley Scott"
   When  I follow "Find Movies With Same Director"
   Then  I should be on the home page
