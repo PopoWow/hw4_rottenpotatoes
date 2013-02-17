@@ -18,7 +18,7 @@ Scenario: add director to existing movie
   And  I fill in "Director" with "Ridley Scott"
   And  I press "Update Movie Info"
   Then the director of "Alien" should be "Ridley Scott"
- 
+
 Scenario: find movie with same director
   Given I am on the details page for "Star Wars"
   When  I follow "Find Movies With Same Director"
@@ -27,8 +27,8 @@ Scenario: find movie with same director
   But   I should not see "Blade Runner"
  
 Scenario: can't find similar movies if we don't know director (sad path)
+  #Then I debug
   Given I am on the details page for "Alien"
-  When I debug
   Then  I should not see "Ridley Scott"
   When  I follow "Find Movies With Same Director"
   Then  I should be on the home page
