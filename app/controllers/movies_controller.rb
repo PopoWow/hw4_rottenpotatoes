@@ -68,9 +68,11 @@ class MoviesController < ApplicationController
     #debugger
     movie = Movie.find params[:id]
     if movie and movie['director'] and not movie['director'].empty?
-      @director = movie['director']
-      @movies = Movie.find_all_by_director(@director)
-    else
+      dir_name = movie['director']
+      @movies = Movie.get_similar_movies dir_name
+    end
+
+    unless @movies
       # no director, redirect to home_page
       flash[:notice] = "'#{movie['title']}' has no director info"
       redirect_to movies_path

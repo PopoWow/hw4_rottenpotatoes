@@ -1,0 +1,13 @@
+# spec/fixtures/movies.yml
+milk_movie:
+  id: 1
+  title: Milk
+  rating: R
+  director: Gus Van Sant
+  release_date: 2008-11-26
+
+documentary_movie:
+  id: 2
+  title: Food, Inc. 
+  director: Robert Kenner
+  release_date: 2008-09-07
